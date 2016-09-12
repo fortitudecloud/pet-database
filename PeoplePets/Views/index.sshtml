@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Pets Name Database</title>
+
+	<link href="@Path['~/Content/css/style.css']" rel="stylesheet">
+	<link href="@Path['~/Content/css/animate.css']" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:300" rel="stylesheet">	
+	
+	<script src="@Path['~/Content/js/jquery-3.1.0.min.js']"></script>
+	<script src="@Path['~/Content/js/handlebars-v4.0.5.js']"></script>
+	<script src="@Path['~/Content/js/app.js']"></script>
+</head>
+<body>
+	
+	<div class="container fx col center">
+		
+		<div class="home">
+			<div class="fx row center">
+				<img src="@Path['~/Content/imgs/logo.png']" alt="logo" class="logo" />
+				<div class="fx col center">
+					<h2>Pet Owners</h2>
+					<h1>Database</h1>
+				</div>			
+			</div>
+			<div class="fx row center">
+				<div class="fx-x"></div>
+				<button>Show Me Cat Names By Gender Please</button>
+				<div class="fx-x"></div>
+			</div>
+		</div>
+
+		<div class="names fx row center">
+			<div class="fx-x"></div>
+			<div class="results">
+				<div class="fx row center">
+					<img src="@Path['~/Content/imgs/purr.png']" alt="results" class="results-image" />
+					<div class="fx col center">
+						<h2>Cat Names</h2>
+						<h1>Results</h1>
+					</div>
+				</div>
+				<div class="list fx row center"></div>
+			</div>
+			<div class="fx-x"></div>
+		</div>
+
+	</div>
+
+	
+
+	<div id="footer" class="fx row center">
+		<div class="fx-x"></div>
+		<div class="fx col center">
+			<span>Senior Software Developer: <a href="https://au.linkedin.com/in/lionel-hickey-70903624">Lionel Hickey</a></span>			
+		</div>
+		<div class="fx-x"></div>
+	</div>
+
+
+	<div id="notifications" class="fx row center animated">
+		<div class="fx-x"></div>
+		<div class="fx row center">
+			<div class="message fx row center">
+				<img src="@Path['~/Content/imgs/error.png']" alt="error" class="error-image" />
+				<div class="fx col center">
+					<p>The resource you have requested has not been implemented</p>
+					<p><i></i></p>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+	<script id="name-list-template" type="text/x-handlebars-template">		
+		{{!-- display the gender and the list of cat names belonging --}}
+		<div>
+			<h3>{{gender}}</h3>
+			<ul>
+				{{#each petNames}}
+					<li>{{this}}</li>
+				{{/each}}			
+			</ul>
+		</div>
+	</script>
+	
+</body>
+</html>
